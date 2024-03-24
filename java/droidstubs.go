@@ -730,17 +730,9 @@ func metalavaCmd(ctx android.ModuleContext, rule *android.RuleBuilder, srcs andr
 	cmd.BuiltTool("metalava").ImplicitTool(ctx.Config().HostJavaToolPath(ctx, "metalava.jar")).
 		Flag(config.JavacVmFlags).
 		Flag("-J-Xmx6114m").
-<<<<<<< HEAD
 		Flag(config.MetalavaAddOpens).
 		FlagWithArg("--java-source ", params.javaVersion.String()).
 		FlagWithRspFileInputList("@", android.PathForModuleOut(ctx, fmt.Sprintf("%s.metalava.rsp", params.stubsType.String())), srcs).
-=======
-		Flag("-J-Xmx6114m").
-		Flag("-J--add-opens=java.base/java.util=ALL-UNNAMED").
-		FlagWithArg("-encoding ", "UTF-8").
-		FlagWithArg("-source ", javaVersion.String()).
-		FlagWithRspFileInputList("@", android.PathForModuleOut(ctx, "metalava.rsp"), srcs).
->>>>>>> d1427d558 (soong: increase heap size for metalava)
 		FlagWithInput("@", srcJarList)
 
 	// Metalava does not differentiate between bootclasspath and classpath and has not done so for
