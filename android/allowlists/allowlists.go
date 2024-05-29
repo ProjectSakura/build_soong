@@ -66,6 +66,7 @@ var (
 		"build/bazel":                        Bp2BuildDefaultTrueRecursively,
 		"build/make/target/product/security": Bp2BuildDefaultTrue,
 		"build/make/tools":                   Bp2BuildDefaultTrue,
+		"vendor/sakura-priv":                 Bp2BuildDefaultTrue,
 		"build/make/tools/protos":            Bp2BuildDefaultTrue,
 		"build/make/tools/releasetools":      Bp2BuildDefaultTrue,
 		"build/make/tools/sbom":              Bp2BuildDefaultTrue,
@@ -541,7 +542,7 @@ var (
 		// Used for testing purposes only. Should not actually exist in the real source tree.
 		"testpkg/keep_build_file":/* recursive = */ false,
 
-		"vendor/lineage-priv/keys":/* recursive = */ false,
+		"vendor/sakura-priv":/* recursive = */ false,
 	}
 
 	Bp2buildModuleAlwaysConvertList = []string{
