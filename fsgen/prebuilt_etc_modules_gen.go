@@ -338,7 +338,7 @@ func createPrebuiltEtcModulesInDirectory(ctx android.LoadHookContext, partition,
 			// Discard any previously picked module and force it to prebuilt_{root,any} as
 			// they are the only modules allowed to specify the `install_in_root` property.
 			etcInstallPathKey = ""
-			relDestDirFromInstallDirBase = destDir
+			relDestDirFromInstallDirBase, _ = filepath.Rel(etcInstallPathKey, destDir)
 		}
 
 		// Set appropriate srcs, dsts, and releative_install_path based on
